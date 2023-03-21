@@ -5,18 +5,15 @@ Este é um sistema de gerenciamento de patrimônio desenvolvido com Symfony. O o
 
 ## Funcionalidades
 
-TODO:
-    [ ] Migra para Symfony 6.2 com php8.2
-
 O sistema oferece as seguintes funcionalidades:
 
-    Gesão de ativos, com informações como nome, número de série e localização.
+- Getsão de ativos, com informações como nome, número de série e localização.
     
 
 Futuras funcionalidades:
 
-    Cadastro de usuários, com informações como nome, e-mail e senha.
-    Atribuição de ativos a usuários.
+- Cadastro de usuários, com informações como nome, e-mail e senha.
+- Atribuição de ativos a usuários.
 
 
 ## Instalação
