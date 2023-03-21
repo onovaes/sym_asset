@@ -12,23 +12,27 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
-    /**
-     * @Route("/admin", name="admin")
-     */
+    #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        return parent::index();
+        return $this->render('admin/dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Sym Patrimônio');
+            ->setTitle('Sym Patrimonio');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Patrimônios', 'fas fa-list', Patrimonio::class);
+
+        yield MenuItem::section('Conteúdo');
+        yield MenuItem::linkToCrud('Patrimônio', 'fa fa-file-text', Patrimonio::class);
+
+        // MenuItem::section('Users'),
+        // MenuItem::linkToCrud('Comments', 'fa fa-comment', Comment::class),
+        // MenuItem::linkToCrud('Users', 'fa fa-user', User::class),
     }
 }
