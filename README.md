@@ -1,6 +1,6 @@
-# Sistema de Gerenciamento de Patrimônio
+# SYM Asset - Asset Management System
 
-Este é um sistema de gerenciamento de patrimônio desenvolvido com Symfony. O objetivo do sistema é ajudar empresas a gerenciar seus ativos e garantir que eles estejam sempre em boas condições.
+This is a wealth management system powered by Symfony. The aim of the system is to help companies manage their assets and ensure that they are always in good condition.
 
 
 ## Funcionalidades
