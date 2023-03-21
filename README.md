@@ -7,7 +7,7 @@ Este é um sistema de gerenciamento de patrimônio desenvolvido com Symfony. O o
 
 O sistema oferece as seguintes funcionalidades:
 
-- Getsão de ativos, com informações como nome, número de série e localização.
+- Gestão de ativos, com informações como nome, número de série e localização.
     
 
 Futuras funcionalidades:
