@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class PatrimonioController extends AbstractController
+class AssetController extends AbstractController
 {
-    #[Route('/patrimonio', name: 'app_patrimonio')]
+    #[Route('/asset', name: 'app_asset')]
     public function index(): Response
     {
-        return $this->render('patrimonio/index.html.twig', [
-            'controller_name' => 'PatrimonioController',
+        return $this->render('asset/index.html.twig', [
+            'controller_name' => 'AssetController',
         ]);
     }
 }
