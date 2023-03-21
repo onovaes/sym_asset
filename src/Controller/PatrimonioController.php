@@ -8,9 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PatrimonioController extends AbstractController
 {
-    /**
-     * @Route("/patrimonio", name="app_patrimonio")
-     */
+    #[Route('/patrimonio', name: 'app_patrimonio')]
     public function index(): Response
     {
         return $this->render('patrimonio/index.html.twig', [
