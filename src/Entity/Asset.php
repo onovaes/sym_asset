@@ -6,32 +6,42 @@ use App\Repository\AssetRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=AssetRepository::class)
- */
+#[ORM\Entity(repositoryClass: AssetRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Asset
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(length: 255)]
     private $name;
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $purchase_date;
+    #[ORM\Column]
+    private ?\DateTimeImmutable $purchase_date = null;
 
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
+    #[ORM\Column(type: 'float')]
     private $purchase_price;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updated_at = null;
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue()
+    {
+        $this->created_at = new \DateTimeImmutable();
+    }
+
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue()
+    {
+        $this->updated_at = new \DateTimeImmutable();
+    }
 
     // public function __toString(): string
     // {
@@ -55,12 +65,12 @@ class Asset
         return $this;
     }
 
-    public function getPurchaseDate(): ?\DateTimeInterface
+    public function getPurchaseDate(): ?\DateTimeImmutable
     {
         return $this->purchase_date;
     }
 
-    public function setPurchaseDate(?\DateTimeInterface $purchase_date): self
+    public function setPurchaseDate(?\DateTimeImmutable $purchase_date): self
     {
         $this->purchase_date = $purchase_date;
 
@@ -75,6 +85,30 @@ class Asset
     public function setPurchasePrice(?float $purchase_price): self
     {
         $this->purchase_price = $purchase_price;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

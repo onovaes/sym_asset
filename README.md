@@ -1,6 +1,6 @@
 # SYM Asset - Asset Management System
 
-This is a wealth management system powered by Symfony. The aim of the system is to help companies manage their assets and ensure that they are always in good condition.
+This is a simple asset management system powered by Symfony. The aim of the system is to help companies manage their assets and ensure that they are always in good condition.
 
 
 ## Funcionalidades

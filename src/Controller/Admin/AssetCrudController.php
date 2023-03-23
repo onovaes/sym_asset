@@ -3,7 +3,14 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Asset;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 
 class AssetCrudController extends AbstractCrudController
 {
@@ -12,14 +19,25 @@ class AssetCrudController extends AbstractCrudController
         return Asset::class;
     }
 
-    /*
+    
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Asset')
+            ->setEntityLabelInPlural('Assets')
+            ->setSearchFields(['name'])
+            ->setDefaultSort(['created_at' => 'DESC'])
+        ;
+    }
+
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield Field::new('id')->onlyOnIndex();
+        yield TextField::new('name')->setColumns(8);
+        yield MoneyField::new('purchase_price')->setCurrency('USD')->setColumns(2);
+        yield DateField::new('purchase_date')->setColumns(2);
+        yield DateTimeField::new('created_at')->onlyOnIndex();
+        yield DateTimeField::new('updated_at')->onlyOnIndex();
     }
-    */
+    
 }
