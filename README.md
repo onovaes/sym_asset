@@ -3,18 +3,24 @@
 This is a simple asset management system powered by Symfony. The aim of the system is to help companies manage their assets and ensure that they are always in good condition.
 
 
-## Funcionalidades
 
-O sistema oferece as seguintes funcionalidades:
+![Asset Screen](/screenshot.png)
 
-- Gestão de ativos, com informações como nome, número de série e localização.
-    
 
-Futuras funcionalidades:
+
+## Features
+
+- Asset management, with information such as name, purchase_date, description, purchase_price and others.
+- Admin with black mode and mobile support 
+
+
+## Devolping
 
 - Cadastro de usuários, com informações como nome, e-mail e senha.
 - Atribuição de ativos a usuários.
 
+
+<!--
 
 ## Instalação
 
@@ -38,7 +44,7 @@ Futuras funcionalidades:
 
 
 
-<!-- 
+ 
 
 ### Configure o banco de dados no arquivo .env:
 
