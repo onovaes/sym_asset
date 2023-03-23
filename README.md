@@ -2,11 +2,7 @@
 
 This is a simple asset management system powered by Symfony. The aim of the system is to help companies manage their assets and ensure that they are always in good condition.
 
-
-
 ![Asset Screen](/screenshot.png)
-
-
 
 ## Features
 
@@ -14,10 +10,15 @@ This is a simple asset management system powered by Symfony. The aim of the syst
 - Admin with black mode and mobile support 
 
 
-## Devolping
+## Developing
 
-- Cadastro de usuários, com informações como nome, e-mail e senha.
-- Atribuição de ativos a usuários.
+- Register users, with information such as name, email address and address.
+- Assigning Assets to Users
+
+
+
+
+
 
 
 <!--
@@ -37,12 +38,6 @@ This is a simple asset management system powered by Symfony. The aim of the syst
     composer install
     
     ```
-
-
-
-
-
-
 
  
 
