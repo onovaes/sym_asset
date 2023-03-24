@@ -12,6 +12,7 @@ This is a simple asset management system powered by Symfony. The aim of the syst
 
 ## Developing
 
+- Asset image
 - Register users, with information such as name, email address and address.
 - Assigning Assets to Users
 - Multi Tenancy
