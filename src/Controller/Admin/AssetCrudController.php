@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class AssetCrudController extends AbstractCrudController
 {
@@ -27,6 +28,7 @@ class AssetCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Asset')
             ->setEntityLabelInPlural('Assets')
             ->setSearchFields(['name'])
+            ->showEntityActionsInlined()
             ->setDefaultSort(['created_at' => 'DESC'])
         ;
     }
@@ -40,6 +42,13 @@ class AssetCrudController extends AbstractCrudController
         yield TextEditorField::new('description')->hideOnIndex()->setColumns(8);
         yield DateTimeField::new('created_at')->onlyOnIndex();
         yield DateTimeField::new('updated_at')->onlyOnIndex();
+
+        yield ImageField::new('image')
+            ->setBasePath('uploads/assets/images/')
+            ->setUploadDir('public/uploads/assets/images/')
+            ->setColumns(4)
+            ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]')
+        ;
     }
     
 }

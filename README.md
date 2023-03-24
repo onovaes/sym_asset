@@ -6,7 +6,7 @@ This is a simple asset management system powered by Symfony. The aim of the syst
 
 ## Features
 
-- Asset management, with information such as name, purchase_date, description, purchase_price and others.
+- Asset management, with information such as name, purchase_date, description, purchase_price, image file and others.
 - Admin with black mode and mobile support 
 
 
