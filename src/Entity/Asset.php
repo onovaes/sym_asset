@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\AssetRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: AssetRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -16,12 +17,14 @@ class Asset
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 4,max: 255)]
     private $name;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $purchase_date = null;
 
     #[ORM\Column(type: 'float')]
+    #[Assert\GreaterThanOrEqual(1)]
     private $purchase_price;
 
     #[ORM\Column]
